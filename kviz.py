@@ -15,6 +15,8 @@ class Vprasanje:
 
 
 def poisci_vprasanja(datoteka):
+    '''Funkcija iz datoteke razbere vprašanja ter
+    pripadajoče odgovore s pravilnim vred.'''
     vprasanja = []
     with open (datoteka) as datoteka:
         for vrstica in datoteka:
@@ -39,11 +41,35 @@ def poisci_vprasanja(datoteka):
 
 
 def postavi_vprasanje(datoteka):
+    '''Iz podane datoteka funkcija izbere le eno naključno vprašanje.'''
     vprasanja = poisci_vprasanja(datoteka)
     vprasanje = random.choice(vprasanja)
     return vprasanje
 
+denarne_nagrade = ["100€", "200€", "500€", "750€", \
+                   "1500€", "2500€", "5000€", "7500€", "12500€", \
+                   "25000€", "50000€", "100000€"]
 
+#Igra bo imela v vsakem sklopu po 3 vprašanja
 
-postavi_vprasanje("Lahka_vprasanja.txt")     
+def igra():
+    vprasanje = 1
+    if vprasanje == 1:
+        with open("Lahka_vprasanja.txt") as datoteka:
+            vprasanja = poisci_vprasanja(datoteka)
+            random.shuffle(vprasanja)
+            odgovori_na = vprasanje.pop()
+            moj_odgovor = input("Odgovor: ")
+            if moj_odgovor == odgovori_na.pravilni_odgovor:
+                vprasanje += 1
+                igra()
+#izberi odgovor
+#če je odgovor napačen --> konec
+#če je odgovor pravilen --> vprasanje += 1 in izpiše nagrado
+        
+    elif vprasanje < 4:
+        random.shuffle(vprasanja)
+        odgovori_na = vprasanje.pop()
+        return odgovori_na
+#enak postopek za težja vprašanja
 
