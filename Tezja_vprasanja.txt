@@ -1,35 +1,35 @@
 + Kakšno je bilo srednje ime pevca Elvisa Presleya?
 A) Leroy
 B) Arthur
-C) Aaron *
+C) Aaron*
 D) Lewis
 
 + Katero od naštetih imen je bilo prvotno ime glasbene skupine Queen?
-A) Smile *
+A) Smile*
 B) Bad Company
 C) The Freddie Mercury Experience
 D) The Red Special
 
 + Koliko kosti se nahaja v vratu žirafe?
 A) 34
-B) 7 *
+B) 7*
 C) 18
 D) 22
 
 + Kolikokrat uspešnih pristankov na Luni je uspelo misiji Apollo?
 A) Dva
-B) Šest *
+B) Šest*
 C) Devet
 C) Pet
 
 + Katera je najmanjša država Amerik, sestavljena iz dveh otoèji in z glavnim mestom Basseterre?
 A) Kuba
-B) Sveti Krištof in Nevis *
+B) Sveti Krištof in Nevis*
 C) Otoki Turks in Caicos
 D) Barbados
 
 + Katera je bila prva osamosvojena afriška država?
-A) Liberija *
+A) Liberija*
 B) Libija
 C) Demokratièna Republika Kongo
 D) Etiopija
@@ -37,5 +37,23 @@ D) Etiopija
 + Katero vlogo je v filmih Vojna Zvezd igral Chuck Norris?
 A) Luke Skywalker
 B) Darth Vader
-C) The Force *
+C) The Force*
 D) Jar Jar Bings
+
++ Katera svetovna prestolnica se nahaja najbližje Mount Everestu?
+A) New Delhi
+B) Katmandu*
+C) Thimphu
+D) Daka
+
++ Katerega leta je pisatelj George R. R. Martin izdal prvi roman zbirke Pesem ledu in ognja z naslovom Igra prestolov?
+A) 1993
+B) 1999
+C) 2001
+D) 1996*
+
++ Kateri od naštetih škratov se ni pojavil v filmu Hobit?
+A) Mori*
+B) Gloin
+C) Bifur
+D) Bofur
