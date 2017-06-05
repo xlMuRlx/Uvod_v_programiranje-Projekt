@@ -14,17 +14,9 @@ class Vprasanje:
         return "Vprasanje({0}, {1},{2})".format(self.vprasanje, self.odgovori, \
                                                 self.pravilni_odgovor)
 
-    def izberi_odgovor_A(self):
-        return self.odgovori[0]
-
-    def izberi_odgovor_B(self):
-        return self.odgovori[1]
-
-    def izberi_odgovor_C(self):
-        return self.odgovori[2]
-
-    def izberi_odgovor_D(self):
-        return self.odgovori[3]
+    def izberi_odgovor(self, odg):
+        return odg == self.pravilni_odgovor
+    
 
 
 def poisci_vprasanja(datoteka):
@@ -58,13 +50,14 @@ def postavi_vprasanje(datoteka):
     '''Iz podane datoteka funkcija izbere le eno naključno vprašanje.'''
     vprasanja = poisci_vprasanja(datoteka)
     vprasanje = random.choice(vprasanja)
+    
     return vprasanje
+
 
 denarne_nagrade = ["100€", "200€", "500€", "750€", \
                    "1500€", "2500€", "5000€", "7500€", "12500€", \
                    "25000€", "50000€", "100000€"]
 
-#Igra bo imela v vsakem sklopu po 3 vprašanja
 
 def igra():
     vprasanje = 1
