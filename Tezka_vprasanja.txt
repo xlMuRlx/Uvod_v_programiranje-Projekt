@@ -40,7 +40,7 @@ B) Majda Potokar
 C) Štefka Drolc
 D) Duša Podkaj
 
-+ Kateri od slovenskih nogometnih klubov ima najveè naporednih naslovov državnih prvakov?
++ Kateri od slovenskih nogometnih klubov ima najveè zaporednih naslovov državnih prvakov?
 A) Olimpija
 B) Gorica
 C) Domžale
@@ -52,7 +52,7 @@ B) 7
 C) 4
 D) 6
 
-+ Katera je majhna država s Sredozemlju, od leta 1975 politièno razdeljena na južni in severni del?
++ Katera je majhna država v Sredozemlju, od leta 1975 politièno razdeljena na južni in severni del?
 A) Ciper*
 B) Tunizija
 C) Malta

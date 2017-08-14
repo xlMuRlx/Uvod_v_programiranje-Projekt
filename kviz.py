@@ -41,153 +41,36 @@ def poisci_vprasanja(datoteka):
                     nov_element.odgovori.append(odgovor)
             elif vrstica == "\n":
                 vprasanja.append(nov_element)
-                
-                
+                            
     return vprasanja
+
 
 
 def postavi_vprasanje(datoteka):
     '''Iz podane datoteka funkcija izbere le eno naključno vprašanje.'''
     vprasanja = poisci_vprasanja(datoteka)
-    vprasanje = random.choice(vprasanja)
+    random.shuffle(vprasanja)
     
-    return vprasanje
+    return random.choice(vprasanja)
 
 
-denarne_nagrade = ["100€", "200€", "500€", "750€", \
-                   "1500€", "2500€", "5000€", "7500€", "12500€", \
-                   "25000€", "50000€", "100000€"]
+denarne_nagrade = ["0€", "50€", "100€", "200€", "300€", "500€", "750€", \
+                   "1500€", "2500€", "3500€", "5000€", "7500€", "12500€", \
+                   "20000€", "30000€", "50000€", "100000€"]
 
+uvod = "Dobrodošli v kvizu Lepo je biti milijonar."
 
-def igra():
-    vprasanje = 1
-    stevec = 0
-    while True:
-        if vprasanje == 1:
-            vprasanja = poisci_vprasanja("Lahka_vprasanja.txt")
-            random.shuffle(vprasanja)
-            odgovori_na = vprasanja.pop()
-            print(vprasanje, ".", odgovori_na.vprasanje)
-            print(odgovori_na.odgovori)
-            moj_odgovor = int(input("Odgovor: "))
-            if moj_odgovor == odgovori_na.pravilni_odgovor:
-                print("Bravo, osvojili ste {0}!".format(denarne_nagrade[stevec]))
-                vprasanje += 1
-                stevec += 1
-            else:
-                print("KONEC!")
-                break
-        
-        elif vprasanje < 4:
-            random.shuffle(vprasanja)
-            odgovori_na = vprasanja.pop()
-            print(vprasanje, ".", odgovori_na.vprasanje)
-            print(odgovori_na.odgovori)
-            moj_odgovor = int(input("Odgovor: "))
-            if moj_odgovor == odgovori_na.pravilni_odgovor:
-                print("Bravo, osvojili ste {0}!".format(denarne_nagrade[stevec]))
-                vprasanje += 1
-                stevec += 1
-            else:
-                print("KONEC!")
-                break
-            
-        elif vprasanje == 4:
-            vprasanja = poisci_vprasanja("Tezka_vprasanja.txt")
-            random.shuffle(vprasanja)
-            odgovori_na = vprasanja.pop()
-            print(vprasanje, ".", odgovori_na.vprasanje)
-            print(odgovori_na.odgovori)
-            moj_odgovor = int(input("Odgovor: "))
-            if moj_odgovor == odgovori_na.pravilni_odgovor:
-                print("Bravo, osvojili ste {0}!".format(denarne_nagrade[stevec]))
-                vprasanje += 1
-                stevec += 1
-            else:
-                print("KONEC!")
-                break
-            
-        elif vprasanje < 7:
-            random.shuffle(vprasanja)
-            odgovori_na = vprasanja.pop()
-            print(vprasanje, ".", odgovori_na.vprasanje)
-            print(odgovori_na.odgovori)
-            moj_odgovor = int(input("Odgovor: "))
-            if moj_odgovor == odgovori_na.pravilni_odgovor:
-                print("Bravo, osvojili ste {0}!".format(denarne_nagrade[stevec]))
-                vprasanje += 1
-                stevec += 1
-            else:
-                print("KONEC!")
-                break
+pravila_igre = '''
+    Pravila kviza:
+    
+    Pravila so enostavna. Potrebno je odgovoriti na 16 vprašanj. Vsako vprašanje ima štiri
+    ponujene odgovore, med katerimi je samo eden pravilen. Vsako vprašanje je vredno določen
+    znesek denarja, ki ga tekmovalec osvoji, če nanj pravilno odgovori. Prva štiri vprašanja
+    so načeloma lahka, nato se težavnost vprašanj stopnjuje k vedno bolj težkim. Če tekmovalec
+    napačno odgovori na vprašanje osvoji znesek pri prejšnem vprašanju. Igra se zaključi, ko
+    tekmovalec narobe odgovori na neko vprašanje ali pa pravilno odgovori na vseh 16 vprašanj.
 
-        elif vprasanje == 7:
-            vprasanja = poisci_vprasanja("Tezja_vprasanja.txt")
-            random.shuffle(vprasanja)
-            odgovori_na = vprasanja.pop()
-            print(vprasanje, ".", odgovori_na.vprasanje)
-            print(odgovori_na.odgovori)
-            moj_odgovor = int(input("Odgovor: "))
-            if moj_odgovor == odgovori_na.pravilni_odgovor:
-                print("Bravo, osvojili ste {0}!".format(denarne_nagrade[stevec]))
-                vprasanje += 1
-                stevec += 1
-            else:
-                print("KONEC!")
-                break
+    Tekmovalec ima dvakrat na voljo tudi pomoč 50/50, pri kateri odpadeta dva naključno izbrana
+    nepravilna odgovora.
+    '''
 
-        elif vprasanje < 10:
-            random.shuffle(vprasanja)
-            odgovori_na = vprasanja.pop()
-            print(vprasanje, ".", odgovori_na.vprasanje)
-            print(odgovori_na.odgovori)
-            moj_odgovor = int(input("Odgovor: "))
-            if moj_odgovor == odgovori_na.pravilni_odgovor:
-                print("Bravo, osvojili ste {0}!".format(denarne_nagrade[stevec]))
-                vprasanje += 1
-                stevec += 1
-            else:
-                print("KONEC!")
-                break
-
-        elif vprasanje == 10:
-            vprasanja = poisci_vprasanja("Najtezja_vprasanja.txt")
-            random.shuffle(vprasanja)
-            odgovori_na = vprasanja.pop()
-            print(vprasanje, ".", odgovori_na.vprasanje)
-            print(odgovori_na.odgovori)
-            moj_odgovor = int(input("Odgovor: "))
-            if moj_odgovor == odgovori_na.pravilni_odgovor:
-                print("Bravo, osvojili ste {0}!".format(denarne_nagrade[stevec]))
-                vprasanje += 1
-                stevec += 1
-            else:
-                print("KONEC!")
-                break
-
-        elif vprasanje < 12:
-            random.shuffle(vprasanja)
-            odgovori_na = vprasanja.pop()
-            print(vprasanje, ".", odgovori_na.vprasanje)
-            print(odgovori_na.odgovori)
-            moj_odgovor = int(input("Odgovor: "))
-            if moj_odgovor == odgovori_na.pravilni_odgovor:
-                print("Bravo, osvojili ste {0}!".format(denarne_nagrade[stevec]))
-                vprasanje += 1
-                stevec += 1
-            else:
-                print("KONEC!")
-                break
-
-        elif vprasanje == 12:
-            random.shuffle(vprasanja)
-            odgovori_na = vprasanja.pop()
-            print(vprasanje, ".", odgovori_na.vprasanje)
-            print(odgovori_na.odgovori)
-            moj_odgovor = int(input("Odgovor: "))
-            if moj_odgovor == odgovori_na.pravilni_odgovor:
-                print("Postali ste milijonar!")
-                break
-            else:
-                print("KONEC!")
-                break
