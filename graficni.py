@@ -15,7 +15,7 @@ def naslednje_vprasanje():
     global stevec
     if stevec == 0:
         vprasanje.config(text=kviz.uvod)
-        odgovorA.config(text="Začni kviz", command=zacni_igro)
+        odgovorA.config(text="Začni kviz", command=zacni_igro, state="normal")
         odgovorB.config(text="Pravila", command=ukaz_pravila, state="normal")
         odgovorC.config(text="Zapri", command=zakljucek, state="normal")
         odgovorD.config(text="", state="disabled")
@@ -63,7 +63,7 @@ def izberi_odgovor(odg):
             odgovorB.config(text="Nazaj", command=nazaj, state="normal")
             odgovorC.config(text="", state="disabled")
             odgovorD.config(text="", state="disabled")
-            polovicka.config(state="disabled")
+            polovicka.config(text= "", state="disabled")
             osvojen_znesek.config(text="")
         else:
             osvojen_znesek.config(text="Osvojeno: {0}".format(kviz.denarne_nagrade[stevec-1]))
@@ -120,6 +120,8 @@ def ukaz_pravila():
 
 def nazaj():
     global stevec
+    global polovicke
+    polovicke = 0
     stevec = 0
     naslednje_vprasanje()
 

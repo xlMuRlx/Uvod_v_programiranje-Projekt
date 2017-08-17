@@ -46,13 +46,6 @@ def poisci_vprasanja(datoteka):
 
 
 
-def postavi_vprasanje(datoteka):
-    '''Iz podane datoteka funkcija izbere le eno naključno vprašanje.'''
-    vprasanja = poisci_vprasanja(datoteka)
-    random.shuffle(vprasanja)
-    
-    return random.choice(vprasanja)
-
 
 denarne_nagrade = ["0€", "50€", "100€", "200€", "300€", "500€", "750€", \
                    "1500€", "2500€", "3500€", "5000€", "7500€", "12500€", \
