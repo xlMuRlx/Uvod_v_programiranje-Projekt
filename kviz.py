@@ -46,6 +46,20 @@ def poisci_vprasanja(datoteka):
 
 
 
+lahka_vprasanja = poisci_vprasanja("Lahka_vprasanja.txt")
+tezka_vprasanja = poisci_vprasanja("Tezka_vprasanja.txt")
+tezja_vprasanja = poisci_vprasanja("Tezja_vprasanja.txt")
+najtezja_vprasanja = poisci_vprasanja("Najtezja_vprasanja.txt")
+
+
+def sestavi_seznam(k):
+    
+    seznam_vprasanj = random.sample(lahka_vprasanja, k//4) + random.sample(tezka_vprasanja, k//4) + \
+        random.sample(tezja_vprasanja, k//4) + random.sample(najtezja_vprasanja, k//4)
+    
+    return seznam_vprasanj
+
+
 
 denarne_nagrade = ["0€", "50€", "100€", "200€", "300€", "500€", "750€", \
                    "1500€", "2500€", "3500€", "5000€", "7500€", "12500€", \

@@ -7,6 +7,7 @@ from random import randint
 stevec = 0
 vpr = None
 polovicke = 0
+seznam_vprasanj = []
 
 
 
@@ -19,28 +20,15 @@ def naslednje_vprasanje():
         odgovorB.config(text="Pravila", command=ukaz_pravila, state="normal")
         odgovorC.config(text="Zapri", command=zakljucek, state="normal")
         odgovorD.config(text="", state="disabled")
-        
-    if stevec <= 4 and stevec > 0:
-        i = randint(0,len(lahkavprasanja)-1)
-        vpr = lahkavprasanja.pop(i)
-        
-    if stevec > 4 and stevec <= 8:
-        i = randint(0,len(tezkavprasanja)-1) 
-        vpr = tezkavprasanja.pop(i)
-        
-    if stevec > 8 and stevec <= 12:
-        i = randint(0,len(tezjavprasanja)-1) 
-        vpr = tezjavprasanja.pop(i)
-        
-    if stevec > 12 and stevec <= 16:
-        i = randint(0,len(najtezjavprasanja)-1) 
-        vpr = najtezjavprasanja.pop(i)
+
+    if 0 < stevec <= 16:
+        vpr = seznam_vprasanj[stevec-1]
         
     if stevec == 1:
         polovicka.config(text="50/50", state="normal")
         osvojen_znesek.config(text="Osvojeno: 0€")
         
-    if stevec != 0: 
+    if stevec != 0:
         vprasanje.config(text=str(stevec) + ". " + vpr.vprasanje)
         odgovorA.config(text=vpr.odgovori[0], command=izberi_odgovor_A, state="normal")
         odgovorB.config(text=vpr.odgovori[1], command=izberi_odgovor_B, state="normal")
@@ -91,17 +79,9 @@ def izberi_odgovor_D():
 
 
 def zacni_igro():
-    global lahkavprasanja
-    global tezkavprasanja
-    global tezjavprasanja
-    global najtezjavprasanja
-    	
-    lahkavprasanja = kviz.poisci_vprasanja("Lahka_vprasanja.txt")
-    tezkavprasanja = kviz.poisci_vprasanja("Tezka_vprasanja.txt")
-    tezjavprasanja = kviz.poisci_vprasanja("Tezja_vprasanja.txt")
-    najtezjavprasanja = kviz.poisci_vprasanja("Najtezja_vprasanja.txt")
-
     global stevec
+    global seznam_vprasanj
+    seznam_vprasanj = kviz.sestavi_seznam(16)
     stevec = 1
     naslednje_vprasanje()
 
